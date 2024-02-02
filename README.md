@@ -27,8 +27,8 @@ has_many :purchase_records
 | category_id             | integer    | null: false                    |
 | condition_id            | integer    | null: false                    |
 | delivery_charge_load_id | integer    | null: false                    |
-| prefectures_id          | integer    | null: false                    |
-| number_of_days_id       | integer    | null: false                    |
+| prefecture_id           | integer    | null: false                    |
+| number_of_day_id        | integer    | null: false                    |
 | price                   | integer    | null: false                    |
 | user                    | references | null: false, foreign_key: true |
 
@@ -42,15 +42,15 @@ has_one    :purchase_record
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | post_code       | string     | null: false                    |
-| prefectures_id  | integer    | null: false                    |
+| prefecture_id   | integer    | null: false                    |
 | city            | string     | null: false                    |
 | street_address  | string     | null: false                    |
-| building_name   | string     | null: false                    |
+| building_name   | string     |                                |
 | phone_number    | string     | null: false                    |
 | purchase_record | references | null: false, foreign_key: true |
 
 ### Association
-has_one :purchase_record
+belongs_to :purchase_record
 
 
 ## purchase_records テーブル
