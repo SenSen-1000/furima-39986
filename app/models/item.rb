@@ -5,8 +5,8 @@ class Item < ApplicationRecord
   belongs_to :delivery_charge_load
   belongs_to :prefecture
   belongs_to :number_of_day
-
-  validates :item_name, :item_explanation, :category, :condition, :delivery_charge_load, :prefecture, :number_of_day, :price, presence: true
+  belongs_to :user
+  validates  :item_name, :item_explanation, :category, :condition, :delivery_charge_load, :prefecture, :number_of_day, :price, presence: true
 
   validates :category_id,             numericality: { other_than: 1, message: "can't be blank" } 
   validates :condition_id,            numericality: { other_than: 1, message: "can't be blank" } 
