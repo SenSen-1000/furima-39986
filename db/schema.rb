@@ -41,7 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_12_075539) do
 
   create_table "items", charset: "utf8", force: :cascade do |t|
     t.string "item_name", null: false
-    t.string "item_explanation", null: false
+    t.text "item_explanation", null: false
     t.integer "category_id", null: false
     t.integer "condition_id", null: false
     t.integer "delivery_charge_load_id", null: false
