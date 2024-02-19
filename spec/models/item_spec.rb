@@ -52,7 +52,7 @@ RSpec.describe Item, type: :model do
       it 'priceが空では登録できない' do
         @item.price = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid")
+        expect(@item.errors.full_messages).to include("Price can't be blank", "Price is not a number")
       end
       it 'imageが空では登録できない' do
         @item.image = nil

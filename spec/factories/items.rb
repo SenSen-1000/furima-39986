@@ -8,7 +8,7 @@ FactoryBot.define do
     prefecture           {Prefecture.all.sample}
     number_of_day        {NumberOfDay.all.sample}
     price                {Faker::Number.between(from: 300, to: 9999999)}
-    image { Rack::Test::UploadedFile.new(Rails.root.join("spec/fixtures/sample_image.jpg"), 'image/jpeg') }
+    image                { Rack::Test::UploadedFile.new(Rails.root.join("spec/fixtures/sample_image.jpg"), 'image/jpeg') }
     association :user 
   end
 end
