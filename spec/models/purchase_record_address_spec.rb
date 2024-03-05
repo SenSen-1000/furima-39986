@@ -14,8 +14,8 @@ RSpec.describe PurchaseRecordAddress, type: :model do
       it 'すべての値が正しく入力されていれば購入できること' do
         expect(@purchase_record_address).to be_valid
       end
-      it 'bulding_nameは空でも購入できること' do
-        @purchase_record_address.bulding_name = ''
+      it 'building_nameは空でも購入できること' do
+        @purchase_record_address.building_name = ''
         expect(@purchase_record_address).to be_valid
       end
     end

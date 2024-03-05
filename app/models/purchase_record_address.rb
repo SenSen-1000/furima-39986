@@ -1,7 +1,7 @@
 class PurchaseRecordAddress
   extend ActiveHash::Associations::ActiveRecordExtensions
   include ActiveModel::Model
-  attr_accessor :post_code, :prefecture_id, :city, :street_address, :bulding_name, :phone_number, :user_id, :item_id, :token
+  attr_accessor :post_code, :prefecture_id, :city, :street_address, :building_name, :phone_number, :user_id, :item_id, :token
 
   with_options presence: true do
     validates :user_id, :item_id
@@ -15,6 +15,6 @@ class PurchaseRecordAddress
   
   def save
   purchase_record = PurchaseRecord.create(user_id: user_id, item_id: item_id)
-  Address.create(post_code: post_code, prefecture_id: prefecture_id, city: city, street_address: street_address, bulding_name: bulding_name, phone_number: phone_number, purchase_record_id: purchase_record.id)
+  Address.create(post_code: post_code, prefecture_id: prefecture_id, city: city, street_address: street_address, building_name: building_name, phone_number: phone_number, purchase_record_id: purchase_record.id)
   end
 end
