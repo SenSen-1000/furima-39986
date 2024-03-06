@@ -6,10 +6,10 @@ class PurchaseRecordAddress
   with_options presence: true do
     validates :user_id, :item_id
     validates :post_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/}
-    validates :prefecture_id, presence: true
-    validates :city, :street_address, :phone_number, presence: true
-    validates :phone_number, presence: true, format: {with: /\A\d{10,11}\z/}
-    validates :token, presence: true
+    validates :prefecture_id
+    validates :city, :street_address, :phone_number
+    validates :phone_number, format: {with: /\A\d{10,11}\z/}
+    validates :token
   end
 
   
