@@ -13,5 +13,6 @@ class User < ApplicationRecord
   },on: :create
 
   has_many :items
+  has_many :purchase_record
   
 end

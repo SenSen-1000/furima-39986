@@ -1,11 +1,12 @@
 class Item < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
+  extend ActiveHash::Associations::ActiveRecordExtensions 
   belongs_to :category
   belongs_to :condition
   belongs_to :delivery_charge_load
   belongs_to :prefecture
   belongs_to :number_of_day
   belongs_to :user
+  has_one    :purchase_record
   validates  :image, :item_name, :item_explanation, presence: true
   validates  :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
 
